@@ -10,6 +10,7 @@ const LabelCorfirmarSenha = document.getElementById("labelConfirmarSenha")
 const confirmarSenha = document.getElementById("confirmarSenha")
 const btnConfirmar = document.getElementById("confirmar")
 
+
 nomeDOM.addEventListener('keyup', () => {
     if(nomeDOM.value.length <= 2 && nomeDOM.value == " "){
         nomeDOM.setAttribute('style', 'border-color: red')
@@ -29,3 +30,4 @@ sobreNomeDOM.addEventListener('keyup', () => {
 btnConfirmar.addEventListener('click', (event) =>{
     event.preventDeFault()
 })
+
