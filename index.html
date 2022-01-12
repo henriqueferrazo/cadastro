@@ -42,7 +42,7 @@
                 <label id="labelNome">Nome</label>
                 <input type="text" name="nome" id="nome" class="" required>
                 <label id="labelSobreNome">Sobrenome</label>
-                <input type="text" name="sobrenome" id="sobreNome" required>
+                <input type="text" name="sobrenome" id="sobreNome" maxlength="10" required>
             </div><br>
             <div>
                 <label id="labelDataNasc">Data de Nascimento</label>
@@ -54,9 +54,9 @@
             </div><br>
             <div>
                 <label for="" id="labelSenha">Senha</label>
-                <input type="password" name="senha" id="senha" required>
+                <input type="password" name="senha" id="senha" pattern="^(?=.*\d).{8,12}$" title="Expressão de senha. A senha deve ter entre 8 e 12 dígitos e incluir pelo menos um dígito numérico." required>
                 <label id="labelConfirmarSenha">Confirmar Senha</label>
-                <input type="password" name="confirSenha" id="confirmarSenha" required>
+                <input type="password" name="confirSenha" id="confirmarSenha" pattern="^(?=.*\d).{8,12}$" required>
             </div>
             <div class="btn-confi">
                 <button id="confirmar" class="btn btn-primary" class="col-2" >Confirmar</button>

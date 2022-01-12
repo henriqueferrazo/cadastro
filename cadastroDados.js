@@ -11,15 +11,16 @@ const confirmarSenha = document.getElementById("confirmarSenha")
 const btnConfirmar = document.getElementById("confirmar")
 
 nomeDOM.addEventListener('keyup', () => {
-    if(nomeDOM.value.length <= 2 || nomeDOM.value === " "){
+    if(nomeDOM.value.length <= 2 && nomeDOM.value == " "){
         nomeDOM.setAttribute('style', 'border-color: red')
     }else{
         nomeDOM.setAttribute('style', 'border-color : green')
     }
 })
 sobreNomeDOM.addEventListener('keyup', () => {
-    if(sobreNomeDOM.value.length <= 3 || sobreNomeDOM.value === " "){
+    if(sobreNomeDOM.value.length <= 3){
         sobreNomeDOM.setAttribute('style', 'border-color: red')
+ 
     }else{
         sobreNomeDOM.setAttribute('style', 'border-color : green')
     }
