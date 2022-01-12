@@ -10,6 +10,9 @@ function validarNascimento(input){
 
     if(!maiorQue16(valorRecebido)){
         mensagem = "Você precisa ter mais de 16 anos para se cadastrar"
+        validaDataNascimento.setAttribute('style', 'border-color: red')
+    }else{
+        validaDataNascimento.setAttribute('style', 'border-color: green')
     }
     
     input.setCustomValidity(mensagem)
@@ -17,6 +20,6 @@ function validarNascimento(input){
 }
 function maiorQue16(data){
     const dataAtual = new Date()
-    const maiorDe16 = new Date(data.getUTCFullYear() + 18, data.getUTCMonth(), data.getUTCDate())
+    const maiorDe16 = new Date(data.getUTCFullYear() + 16, data.getUTCMonth(), data.getUTCDate())
     return  maiorDe16 <= dataAtual
 }
