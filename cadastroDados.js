@@ -12,14 +12,14 @@ const btnConfirmar = document.getElementById("confirmar")
 
 
 nomeDOM.addEventListener('keyup', () => {
-    if(nomeDOM.value.length <= 2 && nomeDOM.value == " "){
+    if(nomeDOM.value.length <= 2 || nomeDOM.value.length == ""){
         nomeDOM.setAttribute('style', 'border-color: red')
     }else{
         nomeDOM.setAttribute('style', 'border-color : green')
     }
 })
 sobreNomeDOM.addEventListener('keyup', () => {
-    if(sobreNomeDOM.value.length <= 3){
+    if(sobreNomeDOM.value.length <= 3 || sobreNomeDOM.value.length == " "){
         sobreNomeDOM.setAttribute('style', 'border-color: red')
  
     }else{
