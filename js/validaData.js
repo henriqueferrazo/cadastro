@@ -1,4 +1,4 @@
-const validaDataNascimento = document.getElementById('dataNascimento')
+// const validaDataNascimento = document.getElementById('dataNascimento')
 
 // validaDataNascimento.addEventListener('blur', (event) => {
 //     validarNascimento(event.target)
@@ -14,7 +14,7 @@ const validaDataNascimento = document.getElementById('dataNascimento')
 //     }else{
 //         validaDataNascimento.setAttribute('style', 'border-color: green')
 //     }
-    
+
 //     input.setCustomValidity(mensagem)
 
 // }
@@ -24,22 +24,32 @@ const validaDataNascimento = document.getElementById('dataNascimento')
 //     return  maiorDe16 <= dataAtual
 // }
 
+ export function validarGeral(input) {
+    const tiposDeInput = input.dataSet.tipo
+    
+    if (objetoValidador[tiposDeInput]) {
+        objetoValidador[tiposDeInput](input)
+    }
+}
+const objetoValidador = {
+    dataNascimento: input => valida(input)
+}
 
-validaDataNascimento.addEventListener('blur', (event) => {
-    valida(event.target)
-})
+// validaDataNascimento.addEventListener('blur', (event) => {
+//     valida(event.target)
+// })
 const valida = (input) => {
     const dataAtual = new Date()
     const valorRecebido = new Date(input.value)
     const maiorDe16 = new Date(valorRecebido.getUTCFullYear() + 16, valorRecebido.getUTCMonth(), valorRecebido.getUTCDate())
     let mensagem = " "
 
-    if(!(maiorDe16 <= dataAtual)) {
+    if (!(maiorDe16 <= dataAtual)) {
         mensagem = "Você precisa ter mais de 16 anos para se cadastrar"
         validaDataNascimento.setAttribute('style', 'border-color: red')
-    }else{
+    } else {
         validaDataNascimento.setAttribute('style', 'border-color: green')
     }
-    
+
     input.setCustomValidity(mensagem)
 }
